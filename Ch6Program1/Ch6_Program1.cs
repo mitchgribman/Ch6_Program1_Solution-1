@@ -28,17 +28,11 @@ namespace Ch6_Program1
                 {
                     numOfEvens++;
                 }
-                if (randNum >= maxValue)
-                {
-                    maxValue = randNum;
-                }
-                if (randNum <= minValue)
-                {
-                    minValue = randNum;
-                }
+                minValue = Math.Min(minValue, randNum);
+                minValue = Math.Max(maxValue, randNum);
+                
                 display += (i+1) + ". " + randNum + "\t\t";
             }
-
             string displayInfo = "\n\nThere are " + numOfEvens + " even numbers listed above.\n"
             + "The smallest number is " + minValue + ".\nThe largest number is " + maxValue
             + ".\nThe range of values is " + (maxValue - minValue) + ".";
